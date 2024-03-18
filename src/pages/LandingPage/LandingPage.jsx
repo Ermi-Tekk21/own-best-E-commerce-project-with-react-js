@@ -35,8 +35,11 @@ const LandingPage = () => {
           Discover stylish new arrivals, quality comfort, and innovation for
           your active life.
         </p>
-        <Link to="/log-in">
-          <Button label="Shop now" iconURL={arrowRight}/>
+        <Link to="/log-in" className="max-md:hidden">
+          <Button label="shop now" iconURL={arrowRight}/>
+        </Link>
+        <Link to="/log-in" className="md:hidden">
+          <Button label="sign in" iconURL={arrowRight}/>
         </Link>
         <div className="flex justify-evenly items-start max-xl:mb-10 flex-wrap w-full mt-20 gap-16 border text-center py-4 rounded-lg border-sky-600 border-dotted hover:bg-sky-50 ">
           {statistics.map((stat, index) => (
