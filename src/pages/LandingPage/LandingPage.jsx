@@ -22,7 +22,7 @@ const LandingPage = () => {
         <p className="xl:text-xl max-sm::text-xs sm:text-sm md:text-md font-montserrat text-coral-sky">
           Our Summer collections
         </p>
-        <h1 className="mt-10 font-palanquin max-sm:text-2xl sm:text-4xl lg:text-8xl max-sm:text-[22px] max-sm:leading-[32px] font-bold">
+        <h1 className="mt-10 font-palanquin max-sm:text-2xl sm:text-4xl lg:text-8xl max-sm:text-[42px] max-sm:leading-[52px] font-bold">
           <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">
             Discover the Latest
           </span>{" "}
