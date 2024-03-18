@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { copyrightSign } from "../assets/icons";
 import { own_best } from "../assets/icons";
 import { footerLinks, socialMedia } from "../constants";
@@ -9,7 +10,7 @@ const Footer = () => {
      
       <div className='flex justify-between items-start gap-20 flex-wrap max-lg:flex-col'>
         <div className='flex flex-col items-start'>
-          <a href='/'>
+          <Link to='/'>
             <img
               src={own_best}
               alt='logo'
@@ -17,7 +18,7 @@ const Footer = () => {
               height={46}
               className='m-0'
             />
-          </a>
+          </Link>
           <p className='mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm text-slate-400'>
             Get your favorite ready for the new term at your nearest <i><span className="text-sky-300">ownbest</span></i> store. Find
             Your perfect Choice In Store. Get Rewards
@@ -28,7 +29,7 @@ const Footer = () => {
                 className='flex justify-center items-center w-12 h-12 bg-white rounded-full'
                 key={icon.alt}
               >
-                <a href={icon.path}><img src={icon.src} alt={icon.alt} width={24} height={24} /></a>
+                <Link to={icon.path}><img src={icon.src} alt={icon.alt} width={24} height={24} /></Link>
               </div>
             ))}
           </div>
@@ -46,7 +47,7 @@ const Footer = () => {
                     className='mt-3 font-montserrat text-base leading-normal text-white-400 hover:text-slate-gray'
                     key={link.name}
                   >
-                    <a href={link.link}>{link.name}</a>
+                    <Link to={link.link}>{link.name}</Link>
                   </li>
                 ))}
               </ul>
