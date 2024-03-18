@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { socialMedia } from "../../constants";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   useEffect(() => {
@@ -30,7 +31,7 @@ const Contact = () => {
                 className='flex justify-center items-center w-12 h-12 bg-white rounded-full'
                 key={icon.alt}
               >
-                <a href={icon.path}><img src={icon.src} alt={icon.alt} width={24} height={24} /></a>
+                <Link to={icon.path}><img src={icon.src} alt={icon.alt} width={24} height={24} /></Link>
               </div>
             ))}
           </div>
