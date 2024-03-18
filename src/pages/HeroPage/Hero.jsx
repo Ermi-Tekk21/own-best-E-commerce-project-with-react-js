@@ -5,7 +5,7 @@ import PopularProducts from "../ProductsPage/PopularProducts";
 
 function Hero() {
     return (
-      <div className="mr-10 ml-10">
+      <div>
         <LandingPage />
         <About />
         <PopularProducts />

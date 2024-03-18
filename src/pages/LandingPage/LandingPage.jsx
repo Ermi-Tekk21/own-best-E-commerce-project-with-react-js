@@ -14,15 +14,15 @@ const LandingPage = () => {
     AOS.init();
   }, []);
   return (
-    <section className="w-full flex xl:flex-row flex-col justify-between min-h-screen gap-10 max-container ml-10">
+    <section className="flex max-md:px-4 px-16 max-xl:flex-col gap-10">
       <div
         data-aos="fade-right"
-        className="xl:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x pt-28"
+        className="xl:w-2/5 flex flex-col justify-center items-start w-full  max-xl:padding-x md:pt-28 max-md:pt-24"
       >
-        <p className="text-xl font-montserrat text-coral-sky">
+        <p className="xl:text-xl max-sm::text-xs sm:text-sm md:text-md font-montserrat text-coral-sky">
           Our Summer collections
         </p>
-        <h1 className="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold">
+        <h1 className="mt-10 font-palanquin max-sm:text-2xl sm:text-4xl lg:text-8xl max-sm:text-[22px] max-sm:leading-[32px] font-bold">
           <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">
             Discover the Latest
           </span>{" "}
@@ -31,17 +31,17 @@ const LandingPage = () => {
           <br />
           Trends
         </h1>
-        <p className="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm">
+        <p className="font-montserrat text-slate-gray max-md:text-md max-md:mr-[20px] md:text-lg leading-8 mt-6 mb-14 sm:max-w-sm">
           Discover stylish new arrivals, quality comfort, and innovation for
           your active life.
         </p>
         <Link to="/log-in">
           <Button label="Shop now" iconURL={arrowRight}/>
         </Link>
-        <div className="flex justify-evenly items-start flex-wrap w-full mt-20 gap-16 border text-center py-4 rounded-lg border-sky-600 border-dotted hover:bg-sky-50 ">
+        <div className="flex justify-evenly items-start max-xl:mb-10 flex-wrap w-full mt-20 gap-16 border text-center py-4 rounded-lg border-sky-600 border-dotted hover:bg-sky-50 ">
           {statistics.map((stat, index) => (
             <div key={index}>
-              <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
+              <p className="max-md:text-2xl md:text-4xl font-palanquin font-bold">{stat.value}</p>
               <p className="leading-7 font-montserrat text-slate-gray">
                 {stat.label}
               </p>
@@ -51,7 +51,7 @@ const LandingPage = () => {
       </div>
       <div
         data-aos="fade-left"
-        className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center"
+        className="relative max-md:flex-col flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center"
       >
         <div className="flex items-center gap-1 justify-center">
           <p className="font-montserrat text-slate-gray  text-right text-2xl max-sm:ml-4">
@@ -77,7 +77,7 @@ const LandingPage = () => {
           className="object-contain flex justify-center  relative max-sm:ml-4"
         />
 
-        <div className="flex sm:gap-6 gap-4 absolute  -bottom-20 ">
+        <div className="flex sm:gap-6 gap-4 absolute  -bottom-20 max-md:mb-14">
           {topCloths.map((clothImage, index) => (
             <div key={index}>
               <Card

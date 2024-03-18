@@ -18,9 +18,9 @@ const About = () => {
   return (
     <div className="padding">
       <h2 data-aos="fade-down-right" className="text-4xl font-palanquin font-bold">
-        ABOUT <span className="text-coral-sky"> US </span>
+        ABOUT <span className="text-coral-sky underline"> US </span>
       </h2>
-      <div className="grid grid-cols-2 gap-6 max-md:flex flex-col-reverse items-center">
+      <div className="grid grid-cols-2 gap-6 max-xl:flex flex-col-reverse items-center ">
         <div data-aos="fade-right"  className="">
           <h1 className="text-sky-400 font-montserrat">
             <i>{About_us.title}</i>
@@ -37,7 +37,8 @@ const About = () => {
             {About_us.Our_Story}
           </p>
         </div>
-        <div data-aos="fade-left"  className="border-[0.5px] hover:border-[2px] border-sky-400 p-2 rounded-lg shadow-md shadow-sky-400 hover:rotate-1">
+        <div data-aos="fade-left"  className="border-[0.5px] hover:border-[2px] border-sky-400 p-2 rounded-lg 
+        max-xl:mt-10 shadow-md shadow-sky-400 hover:rotate-1">
           <video
             ref={videoRef}
             autoPlay

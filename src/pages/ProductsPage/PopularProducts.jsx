@@ -19,7 +19,7 @@ const PopularProducts = () => {
           >
             Our <span className="text-coral-sky"> Popular </span> Products
           </h2>
-          <div data-aos="fade-down-right" className="flex gap-4 mt-4">
+          <div data-aos="fade-down-right" className="flex gap-4 mt-4 max-[380px]:flex-col justify-center items-center">
             {PopularProductCatagory.map((item) => (
               <div key={item.id}>
                 <PopularBtn
@@ -40,12 +40,14 @@ const PopularProducts = () => {
           selections. Discover a world of comfort, design, and value
         </p>
       </div>
-
-      <div className="mt-16 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14">
+<div className="flex justify-center">
+  <div className="mt-16 grid xl:grid-cols-5 2xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-6 gap-14 ">
         {currentPop.map((product) => (
           <PopularProductCard key={product.name} {...product} />
         ))}
       </div>
+</div>
+      
     </section>
   );
 };
