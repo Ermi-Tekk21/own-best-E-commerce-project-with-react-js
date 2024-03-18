@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 function SignIn() {
   const [formData, setFormData] = useState({
@@ -144,12 +145,12 @@ function SignIn() {
                   />
                 </div>
               </div>
-              <a
+              <Link
                 href="/log-in"
                 className="font-medium text-blue-600 hover:text-blue-500"
               >
                 i already have accoun.
-              </a>
+              </Link>
               <div>
                 <button
                   type="submit"

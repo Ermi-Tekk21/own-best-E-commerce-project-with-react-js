@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 function LogIn() {
   useEffect(() => {
@@ -58,18 +59,18 @@ function LogIn() {
 
             <div className="flex items-center justify-between">
               <div className="flex flex-1 justify-between text-sm">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="font-medium text-blue-600 hover:text-blue-500"
                 >
                   Forgot your password?
-                </a>
-                <a
-                  href="/sign-in"
+                </Link>
+                <Link
+                  to="/sign-in"
                   className="font-medium text-blue-600 hover:text-blue-500"
                 >
                   create new account.
-                </a>
+                </Link>
               </div>
             </div>
 
