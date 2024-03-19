@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function Ham({ isOpen }) {
+function Ham({ isOpen, setIsOpen }) {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -22,14 +22,15 @@ function Ham({ isOpen }) {
         className="flex flex-col items-center">
           {navLinks.map((item, index) => (
             <li key={index} className="mb-10">
-              <Link
+              <button onClick={()=>setIsOpen(!isOpen)}><Link
                 to={item.path}
                 className="font-montserrat text-lg text-slate-gray hover:underline   hover:underline-offset-[25px]
             transition delay-100 hover:text-blue-500 duration-50 rounded-lg px-4 py-1 
             focus:-translate-y-1 focus:scale-110 focus:bg-indigo-100 hover:shadow-sm z-auto "
               >
                 {item.title}
-              </Link>
+              </Link></button>
+              
             </li>
           ))}
         </ul>
