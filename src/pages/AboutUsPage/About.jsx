@@ -37,12 +37,11 @@ const About = () => {
             {About_us.Our_Story}
           </p>
         </div>
-        <div data-aos="fade-left"  className="border-[0.5px] hover:border-[2px] border-sky-400 p-2 rounded-lg 
-        max-xl:mt-10 shadow-md shadow-sky-400 hover:rotate-1">
+        <div data-aos="fade-left"  className="border-[0.5px] border-sky-400 p-2 rounded-lg 
+        max-xl:mt-10 shadow-md shadow-sky-400 hover:border-slate-400 hover:shadow-slate-400 hover:rotate-2">
           <video
             ref={videoRef}
             autoPlay
-            width="500"
             muted
             onEnded={restartVideo}
           >

@@ -86,7 +86,7 @@ const Nav = () => {
             <div className="lg:hidden">
               <button onClick={handleClick}>
                 <img src={menu} alt="menu" className={`w-6 -z-40 ${isOpen ? "hidden" : ""}`} />
-                <img src={close} alt="closemenu" className={`w-6 -z-40 ${!isOpen ? "hidden" : ""}`}/>
+                <img src={close} alt="closemenu" className={`animate-pulse w-6 -z-40 ${!isOpen ? "hidden" : ""}`}/>
               </button>
               <Ham isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
