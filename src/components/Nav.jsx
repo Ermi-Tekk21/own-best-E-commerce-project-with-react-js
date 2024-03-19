@@ -12,7 +12,6 @@ const Nav = () => {
 
   const handleClick = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen);
   };
 
   useEffect(() => {

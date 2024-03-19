@@ -15,7 +15,7 @@ function RouteNotExist() {
           src={notfound}
           alt="page not found"
           data-aos="fade-left"
-          className="p-40 text-center min-h-screen"
+          className="max-md:p-5 max-md:w-full text-center min-h-screen"
         />
   );
 }
