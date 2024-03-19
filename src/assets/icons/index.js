@@ -5,9 +5,10 @@ import copyrightSign from './copyright-sign.svg';
 import twitter from './twitter.svg';
 import instagram from './instagram.svg';
 import facebook from './facebook.svg';
-import own_best from './own_best.png'
-import arrow_up from './arrow_up.svg'
-
+import own_best from './own_best.png';
+import arrow_up from './arrow_up.svg';
+import menu from './hamburger.svg';
+import close from './xmark-solid.svg';
 
 export {
     arrowRight,
@@ -18,5 +19,7 @@ export {
     instagram,
     facebook,
     own_best,
-    arrow_up
+    arrow_up,
+    menu,
+    close
 }
