@@ -13,12 +13,19 @@ const PopularProducts = () => {
     <section id="products" className="max-containe padding max-sm:mt-12 ">
       <div className="flex flex-col gap-5">
         <div className="md:flex gap-10 items-center">
+          <div>
           <h2
             data-aos="fade-down-right"
             className="text-4xl font-palanquin font-bold"
           >
             Our <span className="text-coral-sky"> Popular </span> Products
           </h2>
+          <br />
+          <p className="text-sky-400 font-montserrat">
+            <i># explore using our <span className="font-semibold animate-pulse">catagories</span></i>
+          </p>
+          </div>
+          
           <div data-aos="fade-down-right" className="flex gap-4 mt-4 max-[380px]:flex-col justify-center items-center">
             {PopularProductCatagory.map((item) => (
               <div key={item.id}>
