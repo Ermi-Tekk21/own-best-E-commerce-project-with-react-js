@@ -17,7 +17,7 @@ const About = () => {
   }, []);
   return (
     <div className="padding">
-      <h2 data-aos="fade-down-right" className="text-4xl font-palanquin font-bold">
+      <h2 data-aos="fade-down-right" className="text-4xl font-palanquin pt-10 font-bold">
         ABOUT <span className="text-coral-sky underline"> US </span>
       </h2>
       <div className="grid grid-cols-2 gap-6 max-xl:flex flex-col-reverse items-center ">
