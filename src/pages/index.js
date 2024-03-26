@@ -5,7 +5,7 @@ import PopularProducts from './ProductsPage/PopularProducts';
 import Hero from './HeroPage/Hero';
 import SignInPage from './signInPage/SignInPage';
 import LogIn from './logInPage/LogInPage';
-
+import LogedPopularProducts from './ProductsPage/LogedPopularProducts';
 export {
     LandingPage,
     Hero,
@@ -13,6 +13,7 @@ export {
     PopularProducts,
     Contact,
     SignInPage,
-    LogIn
+    LogIn,
+    LogedPopularProducts
 
 }

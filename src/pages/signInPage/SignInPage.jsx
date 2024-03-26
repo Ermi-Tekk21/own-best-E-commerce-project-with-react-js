@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignIn() {
   const [formData, setFormData] = useState({
@@ -23,17 +23,13 @@ function SignIn() {
       [name]: value,
     });
   };
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you can add your logic to submit the form data, such as sending it to a server
     if (formData.password !== formData.confirmPassword) {
       setErrorMessage("Passwords don't match");
-    }
-    // } else{
-    //   console.log(formData);
-    // }
-    else {
+    }else {
       try {
         const response = await fetch('https://65f3509e105614e654a05b09.mockapi.io/ownbest/UserTable', {
           method: 'POST',
@@ -48,7 +44,9 @@ function SignIn() {
         }
         // Data was successfully submitted
         setErrorMessage("registered succussful");
-        console.log(response);
+        setTimeout(() => {
+          navigate("/log-in");
+        }, 2000);
       } catch (error) {
         // Handle errors
         console.error('Error submitting form data:', error);

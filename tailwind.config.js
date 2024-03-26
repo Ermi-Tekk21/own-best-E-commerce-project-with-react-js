@@ -37,6 +37,7 @@ export default {
         'hero': "url('assets/images/collection-background.svg')",
         'card': "url('assets/images/thumbnail-background.svg')",
         'signUp': "url('assets/images/signUp.jpg')",
+        'welcome': "url('assets/images/welcome.jpg')",
       },
       screens: {
         "wide": "1440px"
