@@ -12,6 +12,7 @@ function SignIn() {
     password: "",
     confirmPassword: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
     AOS.init();
   }, []);
@@ -23,12 +24,38 @@ function SignIn() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you can add your logic to submit the form data, such as sending it to a server
-    console.log(formData);
+    if (formData.password !== formData.confirmPassword) {
+      setErrorMessage("Passwords don't match");
+    }
+    // } else{
+    //   console.log(formData);
+    // }
+    else {
+      try {
+        const response = await fetch('https://65f3509e105614e654a05b09.mockapi.io/ownbest/UserTable', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to submit data');
+        }
+        // Data was successfully submitted
+        setErrorMessage("registered succussful");
+        console.log(response);
+      } catch (error) {
+        // Handle errors
+        console.error('Error submitting form data:', error);
+  
+      }
+    }
   };
-
   return (
     <div data-aos="zoom-in-right" className="mt-8">
       <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -37,8 +64,13 @@ function SignIn() {
             Create an Account
           </h2>
         </div>
-
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <p className={`text-center
+            ${
+              errorMessage == "Passwords don't match" ? 'text-red-600 animate-bounce ' : 'text-green-500'
+            }
+          `}>{errorMessage}</p>
+
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
