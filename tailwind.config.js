@@ -38,6 +38,7 @@ export default {
         'card': "url('assets/images/thumbnail-background.svg')",
         'signUp': "url('assets/images/signUp.jpg')",
         'welcome': "url('assets/images/welcome.jpg')",
+        'banner': "url('assets/images/banner.jpg')",
       },
       screens: {
         "wide": "1440px"

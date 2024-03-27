@@ -36,12 +36,12 @@ function LogIn() {
           if (getEmail.length != 0) {
             if (getEmail[0].password === password) {
               // console.log("found");
-              setErrorMessage("successfully logged in");
+              setErrorMessage("verified");
               setTimeout(() => {
                 const currentUser = JSON.stringify(getEmail);
                 localStorage.setItem("curUser", currentUser)
                 navigate(`/user-account/${getEmail[0]['fullName']}`);
-              }, 3000);
+              }, 1000);
             } else {
               // console.log("email does not match");
               setErrorMessage("email and password does not match");
@@ -73,7 +73,7 @@ function LogIn() {
         <p
           className={`text-center
             ${
-              errorMessage === "successfully logged in"
+              errorMessage === "verified"
                 ? "text-green-500"
                 : "text-red-600 animate-pulse"
             }
