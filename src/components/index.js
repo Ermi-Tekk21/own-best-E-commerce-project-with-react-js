@@ -4,6 +4,7 @@ import PopularProductCard from './PopularProductCard'
 import PopularBtn from './productCatagoryBtn'
 import Footer from './Footer';
 import Ham from'./menu';
+import logedInComp from './logedInComp';
 
 export {
     Nav,
@@ -11,5 +12,6 @@ export {
     PopularProductCard,
     PopularBtn,
     Footer,
-    Ham
+    Ham,
+    logedInComp
 }

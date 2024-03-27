@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 function LogIn() {
   useEffect(() => {
     AOS.init();
@@ -38,7 +38,9 @@ function LogIn() {
               // console.log("found");
               setErrorMessage("successfully logged in");
               setTimeout(() => {
-                navigate("/user-account");
+                const currentUser = JSON.stringify(getEmail);
+                localStorage.setItem("curUser", currentUser)
+                navigate(`/user-account/${getEmail[0]['fullName']}`);
               }, 3000);
             } else {
               // console.log("email does not match");

@@ -2,22 +2,28 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { PopularProductCatagory } from "../../constants";
-import { PopularProductCard, PopularBtn } from "../../components";
+import { PopularProductCard, PopularBtn, logedInComp } from "../../components";
+
 
 const LogedPopularProducts = () => {
   const [currentPop, setCurrentPop] = useState([]);
   useEffect(() => {
     AOS.init();
   }, []);
+  const user = localStorage.getItem("curUser")
+  const curUser = JSON.parse(user)
+  console.log(curUser);
   return (
     <section>
+      {<logedInComp />}
+      <div className="max-containe padding max-sm:mt-12 ">
       <div className="w-full h-[400px] shadow-sm bg-welcome bg-cover bg-center flex flex-col justify-center items-end">
         <div className="mr-[30px]">
           <h2
             data-aos="fade-down-right"
             className="text-4xl font-palanquin font-bold"
           >
-            Welcome dear<span className="text-coral-sky"> user </span>
+            Welcome dear<span className="text-coral-sky"> {curUser[0]["fullName"]} </span>
           </h2>
           <p className="text-sky-400 font-montserrat">
             <i>
@@ -27,7 +33,6 @@ const LogedPopularProducts = () => {
           </p>
         </div>
       </div>
-      <div className="max-containe padding max-sm:mt-12 ">
         <div className="flex flex-col gap-5">
           <div className="md:flex gap-10 items-center">
             <div>
