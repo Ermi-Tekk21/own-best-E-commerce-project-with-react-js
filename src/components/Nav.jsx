@@ -10,12 +10,13 @@ const Nav = () => {
   const [visible, setVisible] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  
+
   const { pathname, search, hash } = location;
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
+  //hide and display the nav automatically
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -38,59 +39,58 @@ const Nav = () => {
     };
   }, [prevScrollPos]);
 
-  const user = localStorage.getItem("curUser")
-  const curUser = JSON.parse(user)
+  const user = localStorage.getItem("curUser");
+  const curUser = JSON.parse(user);
   return (
     <>
       {visible && (
-        <header className={`fixed padding-x py-4 w-full z-30 bg-slate-50 items-center  
-        ${
-          pathname.includes('/user-account')
-            ? "bg-transparent"
-            : "shadow"
-        }
-        `}>
+        <header
+          className={`fixed padding-x py-4 w-full z-30 bg-slate-50 items-center  
+        ${pathname.includes("/user-account") ? "bg-transparent" : "shadow"}
+        `}
+        >
           <nav className="flex items-center gap-4 justify-around">
             <nav className="flex flex-1">
-              
-                <img
-                  src={own_best}
-                  alt="logo"
-                  className={`max-lg:w-[90px] w-[140px]
+              <img
+                src={own_best}
+                alt="logo"
+                className={`max-lg:w-[90px] w-[140px]
                   ${
-                    pathname.includes('/user-account')
+                    pathname.includes("/user-account")
                       ? "bg-slate-200 rounded-full px-2 py-1"
                       : ""
                   }
                   `}
-                />
+              />
             </nav>
-            <ul className={`flex gap-6 max-lg:hidden 
-            ${
-              pathname.includes('/user-account')
-                ? "hidden"
-                : ""
-            }`}>
+            <ul
+              className={`flex gap-6 max-lg:hidden 
+            ${pathname.includes("/user-account") ? "hidden" : ""}`}
+            >
               {navLinks.map((item, index) => (
                 <li key={index}>
                   <Link
                     to={item.path}
-                    className="font-montserrat text-lg text-slate-gray hover:underline   hover:underline-offset-[25px]
+                    className={`font-montserrat text-lg text-slate-gray hover:underline   hover:underline-offset-[25px]
                             transition delay-100 hover:text-blue-500 duration-50 rounded-lg px-4 py-1 
-                            focus:-translate-y-1 focus:scale-110 focus:bg-indigo-100 hover:shadow-sm z-auto "
+                            focus:-translate-y-1 focus:scale-110 focus:bg-indigo-100 hover:shadow-sm z-auto
+                            ${
+                              pathname.includes(item.path)
+                                ? "text-blue-500 underline underline-offset-[25px] shadow-sm bg-sky-100"
+                                : ""
+                            }
+                            `}
                   >
                     {item.title}
                   </Link>
                 </li>
               ))}
             </ul>
-            <ul className={`flex gap-1 items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full max-lg:hidden
-            ${
-              pathname.includes('/user-account')
-                ? "hidden"
-                : ""
-            }
-            `}>
+            <ul
+              className={`flex gap-1 items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full max-lg:hidden
+            ${pathname.includes("/user-account") ? "hidden" : ""}
+            `}
+            >
               {procedLink.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -110,29 +110,41 @@ const Nav = () => {
               />
             </ul>
 
-            <button className={`items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full
-            ${
-              pathname.includes('/user-account')
-                ? ""
-                : "hidden"
-            }
-            `} onClick={()=>{localStorage.setItem("curUser",null)}}>
-              <Link
-              to="/">
-              <span className="hover:font-semibold font-serif">log out</span> | <span className="capitalize text-blue-950">{curUser?curUser[0]["fullName"]:""}</span>
+            <button
+              className={`items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full
+            ${pathname.includes("/user-account") ? "" : "hidden"}
+            `}
+              onClick={() => {
+                localStorage.setItem("curUser", null);
+              }}
+            >
+              <Link to="/">
+                <span className="hover:font-semibold font-serif">log out</span>{" "}
+                |{" "}
+                <span className="capitalize text-blue-950">
+                  {curUser ? curUser[0]["fullName"] : ""}
+                </span>
               </Link>
             </button>
 
-            <div className={`lg:hidden
-            ${
-              pathname.includes('/user-account')
-                ? "hidden"
-                : ""
-            }
-            `}>
+            <div
+              className={`lg:hidden
+            ${pathname.includes("/user-account") ? "hidden" : ""}
+            `}
+            >
               <button onClick={handleClick}>
-                <img src={menu} alt="menu" className={`w-6 -z-40 ${isOpen ? "hidden" : ""}`} />
-                <img src={close} alt="closemenu" className={`animate-pulse w-6 -z-40 ${!isOpen ? "hidden" : ""}`}/>
+                <img
+                  src={menu}
+                  alt="menu"
+                  className={`w-6 -z-40 ${isOpen ? "hidden" : ""}`}
+                />
+                <img
+                  src={close}
+                  alt="closemenu"
+                  className={`animate-pulse w-6 -z-40 ${
+                    !isOpen ? "hidden" : ""
+                  }`}
+                />
               </button>
               <Ham isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>

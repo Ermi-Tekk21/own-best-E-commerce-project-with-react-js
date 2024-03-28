@@ -19,7 +19,7 @@ function CustomRouter() {
     <div>
       <Routes>
         <Route path="/" Component={Hero} />
-
+        <Route path="/home" Component={Hero} />
         <Route path="/about-us" Component={About} />
         <Route path="/products" Component={PopularProducts} />
         <Route path="/contact-us" Component={Contact} />

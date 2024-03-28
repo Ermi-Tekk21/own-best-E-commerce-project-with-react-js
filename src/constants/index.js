@@ -4,7 +4,7 @@ import { woman_01 } from "../assets/images/products/woman";
 import { facebook, instagram, twitter } from "../assets/icons";
 
 export const navLinks = [
-  { path: "/", title: "Home" },
+  { path: "/home", title: "Home" },
   { path: "/about-us", title: "About Us" },
   { path: "/products", title: "Products" },
   { path: "/contact-us", title: "Contact Us" },
