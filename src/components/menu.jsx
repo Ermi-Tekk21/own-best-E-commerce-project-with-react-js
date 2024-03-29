@@ -12,7 +12,7 @@ function Ham({ isOpen, setIsOpen }) {
   const { pathname } = location;
   return (
     <div
-      className={`bg-card bg-cover p-4 absolute left-0
+      className={`bg-hero bg-cover p-4 absolute left-0 rounded-3xl border-2 border-sky-300
          bg-slate-50 w-full shadow-lg
         ${!isOpen ? "hidden" : ""}`}
     >
@@ -23,12 +23,12 @@ function Ham({ isOpen, setIsOpen }) {
               <button onClick={() => setIsOpen(!isOpen)}>
                 <Link
                   to={item.path}
-                  className={`font-montserrat text-lg text-blue-900 hover:underline   hover:underline-offset-[25px]
+                  className={`font-montserrat text-lg text-slate-500 hover:underline   hover:underline-offset-[25px]
             transition delay-100 hover:text-blue-500 duration-50 rounded-lg px-4 py-1 
             focus:-translate-y-1 focus:scale-110 focus:bg-indigo-100 hover:shadow-sm z-auto
             ${
               pathname.includes(item.path)
-                ? "underline underline-offset-[25px] shadow-sm bg-sky-100"
+                ? "underline underline-offset-[25px] shadow-sm bg-slate-300 text-[#438bf0]"
                 : ""
             }
             `}

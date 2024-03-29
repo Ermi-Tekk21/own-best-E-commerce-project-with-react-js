@@ -76,12 +76,12 @@ const Nav = () => {
                 <li key={index}>
                   <Link
                     to={item.path}
-                    className={`font-montserrat text-lg text-slate-gray hover:underline   hover:underline-offset-[25px]
+                    className={`font-montserrat text-lg text-slate-gray hover:underline hover:underline-offset-[25px]
                             transition delay-100 hover:text-blue-500 duration-50 rounded-lg px-4 py-1 
-                            focus:-translate-y-1 focus:scale-110 focus:bg-indigo-100 hover:shadow-sm z-auto
+                            focus:-translate-y-1 focus:scale-110 hover:shadow-sm z-auto
                             ${
                               pathname.includes(item.path)
-                                ? "text-blue-500 underline underline-offset-[25px] shadow-sm bg-sky-"
+                                ? "underline underline-offset-[25px] shadow-sm bg-indigo-100 text-[#3c87f0]"
                                 : ""
                             }
                             `}
