@@ -42,16 +42,15 @@ function Ham({ isOpen, setIsOpen }) {
         <div className="flex flex-1 justify-center">
           <button onClick={() => setIsOpen(!isOpen)}>
             <Link to="/log-in">
-            <img
-              src={arrowRight}
-              alt="topcloth"
-              width={40}
-              height={40}
-              className="border-2 border-sky-600 rounded-full bg-slate-50 animate-pulse "
-            />
-          </Link>
+              <img
+                src={arrowRight}
+                alt="topcloth"
+                width={40}
+                height={40}
+                className="border-2 border-sky-600 rounded-full bg-slate-50 animate-pulse "
+              />
+            </Link>
           </button>
-          
         </div>
       </div>
     </div>

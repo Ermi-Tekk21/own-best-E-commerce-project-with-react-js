@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { PopularProductCatagory } from "../../constants";
-import { PopularProductCard, PopularBtn } from "../../components";
+import { PopularProductCard, PopularBtn, Cart } from "../../components";
 
 const PopularProducts = () => {
   const [currentPop, setCurrentPop] = useState([]);

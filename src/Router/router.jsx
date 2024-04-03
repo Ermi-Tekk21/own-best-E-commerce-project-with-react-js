@@ -10,6 +10,7 @@ import {
   LogedPopularProducts,
 } from "../pages";
 import RouteNotExist from "../pages/404/404";
+import { CartCard } from "../components";
 
 function CustomRouter() {
   const user = localStorage.getItem("curUser");
@@ -24,7 +25,11 @@ function CustomRouter() {
         <Route path="/products" Component={PopularProducts} />
         <Route path="/contact-us" Component={Contact} />
         {curUser && (
+          <>
           <Route path="/user-account/:name" Component={LogedPopularProducts} />
+          <Route path="/user-account/:name/cart-page" Component={CartCard} />
+          </>
+          
         )}
 
         <Route path="/sign-in" Component={SignInPage} />

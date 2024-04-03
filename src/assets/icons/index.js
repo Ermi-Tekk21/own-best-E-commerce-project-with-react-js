@@ -9,6 +9,7 @@ import own_best from './own_best.png';
 import arrow_up from './arrow_up.svg';
 import menu from './hamburger.svg';
 import close from './xmark-solid.svg';
+import cartImg from './cart-shopping-solid.svg';
 
 export {
     arrowRight,
@@ -21,5 +22,6 @@ export {
     own_best,
     arrow_up,
     menu,
-    close
+    close,
+    cartImg
 }

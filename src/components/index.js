@@ -5,6 +5,8 @@ import PopularBtn from './productCatagoryBtn'
 import Footer from './Footer';
 import Ham from'./menu';
 import logedInComp from './logedInComp';
+import Cart from './cart';
+import CartCard from './cartCard';
 
 export {
     Nav,
@@ -13,5 +15,6 @@ export {
     PopularBtn,
     Footer,
     Ham,
-    logedInComp
-}
+    Cart,
+    logedInComp,
+    CartCard}

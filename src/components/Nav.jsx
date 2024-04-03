@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { navLinks, procedLink } from "../constants";
-import { arrowRight, menu, own_best } from "../assets/icons";
+import { arrowRight, cartImg, menu, own_best } from "../assets/icons";
 import { Link, useLocation } from "react-router-dom";
-import { Ham } from "./";
+import { Ham, CartCard } from "./";
 import { close } from "../assets/icons";
 
 const Nav = () => {
@@ -10,13 +10,13 @@ const Nav = () => {
   const [visible, setVisible] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  
+
   const { pathname, search, hash } = location;
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
   
-  //hide and display the nav automatically 
+  //hide and display the nav automatically
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -39,39 +39,36 @@ const Nav = () => {
     };
   }, [prevScrollPos]);
 
-  const user = localStorage.getItem("curUser")
-  const curUser = JSON.parse(user)
+  const user = localStorage.getItem("curUser");
+  const curUser = JSON.parse(user);
   return (
     <>
       {visible && (
-        <header className={`fixed padding-x py-4 w-full z-30 bg-slate-50 items-center  
-        ${
-          pathname.includes('/user-account')
-            ? "bg-transparent"
-            : "shadow"
-        }
-        `}>
+        <header
+          className={`fixed padding-x py-4 w-full z-30 bg-slate-50 items-center  
+        ${pathname.includes("/user-account") ? "bg-transparent" : "shadow"}
+        `}
+        >
           <nav className="flex items-center gap-4 justify-around">
             <nav className="flex flex-1">
-              
+              <Link to="/home">
                 <img
                   src={own_best}
                   alt="logo"
                   className={`max-lg:w-[90px] w-[140px]
                   ${
-                    pathname.includes('/user-account')
+                    pathname.includes("/user-account")
                       ? "bg-slate-200 rounded-full px-2 py-1"
                       : ""
                   }
                   `}
                 />
+              </Link>
             </nav>
-            <ul className={`flex gap-6 max-lg:hidden 
-            ${
-              pathname.includes('/user-account')
-                ? "hidden"
-                : ""
-            }`}>
+            <ul
+              className={`flex gap-6 max-lg:hidden 
+            ${pathname.includes("/user-account") ? "hidden" : ""}`}
+            >
               {navLinks.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -91,13 +88,11 @@ const Nav = () => {
                 </li>
               ))}
             </ul>
-            <ul className={`flex gap-1 items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full max-lg:hidden
-            ${
-              pathname.includes('/user-account')
-                ? "hidden"
-                : ""
-            }
-            `}>
+            <ul
+              className={`flex gap-1 items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full max-lg:hidden
+            ${pathname.includes("/user-account") ? "hidden" : ""}
+            `}
+            >
               {procedLink.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -116,30 +111,44 @@ const Nav = () => {
                 height={15}
               />
             </ul>
-
-            <button className={`items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full
-            ${
-              pathname.includes('/user-account')
-                ? ""
-                : "hidden"
-            }
-            `} onClick={()=>{localStorage.setItem("curUser",null)}}>
-              <Link
-              to="/">
-              <span className="hover:font-semibold font-serif">log out</span> | <span className="capitalize text-blue-950">{curUser?curUser[0]["fullName"]:""}</span>
+            {/* log out tab */}
+            <button
+              className={`items-center text-white bg-coral-sky px-8 py-2 text-sm rounded-full
+            ${pathname.includes("/user-account") ? "" : "hidden"}
+            `}
+              onClick={() => {
+                localStorage.setItem("curUser", null);
+                localStorage.setItem("products", []);
+              }}
+            >
+              <Link to="/">
+                <span className="hover:font-semibold font-serif">log out</span>{" "}
+                |{" "}
+                <span className="capitalize text-blue-950">
+                  {curUser ? curUser[0]["fullName"] : ""}
+                </span>
               </Link>
             </button>
+            
 
-            <div className={`lg:hidden
-            ${
-              pathname.includes('/user-account')
-                ? "hidden"
-                : ""
-            }
-            `}>
+            <div
+              className={`lg:hidden
+            ${pathname.includes("/user-account") ? "hidden" : ""}
+            `}
+            >
               <button onClick={handleClick}>
-                <img src={menu} alt="menu" className={`w-6 -z-40 ${isOpen ? "hidden" : ""}`} />
-                <img src={close} alt="closemenu" className={`animate-pulse w-6 -z-40 ${!isOpen ? "hidden" : ""}`}/>
+                <img
+                  src={menu}
+                  alt="menu"
+                  className={`w-6 -z-40 ${isOpen ? "hidden" : ""}`}
+                />
+                <img
+                  src={close}
+                  alt="closemenu"
+                  className={`animate-pulse w-6 -z-40 ${
+                    !isOpen ? "hidden" : ""
+                  }`}
+                />
               </button>
               <Ham isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
