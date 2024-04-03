@@ -58,7 +58,7 @@ function CartCard({ isOpen, setIsOpen }) {
   return (
     <div
       className={`z-40 p-10 bg-hero bg-cover absolute right-0 m-auto rounded-3xl border-[0.5px] border-sky-300 mt-10
-         bg-slate-50 w-3/4 shadow-lg h-[600px] overflow-scroll
+         bg-slate-50 w-3/4 max-md:w-full max-md:p-0 shadow-lg h-[600px] overflow-scroll
         ${!isOpen ? "hidden" : "scrol-y"}`}
     >
       <div className="max-w-7xl w-full p-10">
