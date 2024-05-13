@@ -48,8 +48,6 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 ## Related Projects
 Check out these related projects:
 - https://ermias-tekilemarkos.github.io/e-shopping
-## Licensing
-This project is licensed under the [MIT License](LICENSE).
 
 ## Screenshots
 ![leetcode image](Home.png)
