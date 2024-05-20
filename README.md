@@ -1,12 +1,12 @@
-# own-best-E-commerce-alx-project
+# own-best-E-commerce-project
 
-<h2 align='center'> [own your fashion]彡★ </h2>
+<h2 [own your fashion]彡★ </h2>
 
 
 # E-Commerce Project with mock api
 
 ## Introduction
-Welcome to the E-Commerce ALX Project repository! This project is an e-commerce website built using React with Vite and Tailwind CSS. It provides a platform for users to browse, search, and purchase products online. 
+Welcome to the E-Commerce Project repository! This project is an e-commerce website built using React with Vite and Tailwind CSS. It provides a platform for users to browse, search, and purchase products online. 
 
 ### Links
 - https://ownbest.netlify.app/
