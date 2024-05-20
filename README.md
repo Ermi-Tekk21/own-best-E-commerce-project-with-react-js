@@ -3,7 +3,7 @@
 <h2 align='center'> [own your fashion]彡★ </h2>
 
 
-# E-Commerce ALX Project
+# E-Commerce Project with mock api
 
 ## Introduction
 Welcome to the E-Commerce ALX Project repository! This project is an e-commerce website built using React with Vite and Tailwind CSS. It provides a platform for users to browse, search, and purchase products online. 
@@ -15,11 +15,11 @@ Welcome to the E-Commerce ALX Project repository! This project is an e-commerce 
 To get started with the project, follow these steps:
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/E-Commerce-ALX-Project.git
+   git clone https://github.com/your-username/E-Commerce-Project.git
    ```
 2. Navigate into the project directory:
    ```bash
-   cd E-Commerce-ALX-Project
+   cd E-Commerce-Project
    ```
 3. Install dependencies using npm or yarn:
    ```bash
@@ -47,12 +47,9 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ## Related Projects
 Check out these related projects:
-- https://ermias-tekilemarkos.github.io/e-shopping
+- https://ermii-tekk.github.io/e-shopping
 
 ## Screenshots
 ![leetcode image](Home.png)
 ---
-
-### Additional Resources
-- [What your code repository says about you](https://www.freecodecamp.org/news/what-your-github-repo-readme-says-about-you/)
-- [Awesome list of READMEs](https://github.com/matiassingers/awesome-readme)
+enjoy it
